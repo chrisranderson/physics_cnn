@@ -92,8 +92,8 @@ def train():
             results.append( [ tst_l1, tst_l2rmse, tr_l1, tr_l2rmse ] )
             np.save( 'results.npy', results )
 
-    #      if loss_val < best:
-    #          saver.save( sess, './model.ckpt' )
-    #          best = loss_val
+         if loss_val < best:
+             saver.save( sess, './model.ckpt' )
+             best = loss_val
 
 train()
