@@ -71,7 +71,7 @@ def train():
 
         inds = np.random.choice( train_inputs.shape[0], size=[BATCHSIZE] )
         train_images = np.squeeze(train_inputs[inds,:,:,:])
-        train_images = np.expand_dims([jitter_image(image) for image in train_images], 3)
+        train_images = np.expand_dims([(image) for image in train_images], 3)
 
         _, opt_val, loss_val = sess.run( [optim,loss,l2rmse], feed_dict={
             input_ph: train_images,
@@ -92,8 +92,8 @@ def train():
             results.append( [ tst_l1, tst_l2rmse, tr_l1, tr_l2rmse ] )
             np.save( 'results.npy', results )
 
-         if loss_val < best:
-             saver.save( sess, './model.ckpt' )
-             best = loss_val
+        if tst_l2rmse < best:
+            saver.save( sess, './model.ckpt' )
+            best = tst_l2rmse
 
 train()
