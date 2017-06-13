@@ -109,7 +109,9 @@ def model( input_data ):
     # flat_layer = tf.reshape( conv1b, [ BATCHSIZE, -1 ] )  # [ 16, 436800 ]
 
     # ----------------------------------------------
-    conv1a = conv( input_data, filter_size=7, stride=2, num_filters=32, name="conv1a" )
+    # conv1a = conv( input_data, filter_size=30, stride=1, num_filters=15, name="conv1a" )
+    conv1a = conv( input_data, filter_size=7, stride=2, num_filters=32, name="conv1a" ) # on reaper
+
     conv1b = conv( conv1a, filter_size=7, stride=2, num_filters=32, name="conv1b" )
     pool12 = tf.nn.max_pool( conv1b, ksize=[1,2,2,1], strides=[1,2,2,1], padding='VALID', name="pool12" )
 

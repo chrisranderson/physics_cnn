@@ -102,3 +102,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+model.ckpt.data-00000-of-00001
+model.ckpt.index
+model.ckpt.meta
+checkpoint

@@ -7,7 +7,7 @@ def whiten(x):
 
 def load_data():
     print "Loading data..."
-    inputs_v = np.load( 'data/inputs_valence.npy' )[90:-90, 120:-120, :]
+    inputs_v = np.load( 'data/inputs_valence.npy' )
     inputs_v = inputs_v.transpose( [2,0,1] )  # put batch dimension first
     inputs_v = whiten(inputs_v)
 

@@ -1,0 +1,5 @@
+- old with jitter on ghost
+- new with jitter on reaper
+- new without jitter on aji
+  - clearly overfitting. Best was 4.7 test and 0.7 train
+  - switching to big initial filters - size 30 with 15 of them
